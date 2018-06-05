@@ -5,11 +5,11 @@ class AirplanesController < ApplicationController
 
   def create
     # create
-  
+
   end
 
   def show
-    # show current plane
+  @airplane = Airplane.find params[:id]
 
 
   end
@@ -31,5 +31,5 @@ class AirplanesController < ApplicationController
     #
   end
 
-  private: plane[:params]
+
 end
