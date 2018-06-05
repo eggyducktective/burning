@@ -11,9 +11,8 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-burning-server/tmp/*
-burning-server/log/*
+tmp/
+log/
 !/log/.keep
 !/tmp/.keep
 
@@ -24,11 +23,11 @@ burning-server/log/*
 # Ignore uploaded files in development
 /storage/*
 
-/node_modules
+node_modules/
+
 /yarn-error.log
 
 /public/assets
 .byebug_history
 
->>>>>>> b34c30b4eb75451ed630d3747445fad54cb5be03
 # Ignore master key for decrypting credentials and more.

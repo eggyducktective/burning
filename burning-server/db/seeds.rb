@@ -25,10 +25,10 @@ a2 = Airplane.create name: "767", rows: 18, cols: 4
 puts "Created [#{ Airplane.all.length }] Airplanes"
 
 # Flight
-f1 = Flight.create airplane_id: 1, flight_date: "2018/06/01", origin: "SYD", destination: "MEL"
-f2 = Flight.create airplane_id: 1, flight_date: "2018/06/02", origin: "MEL", destination: "BNE"
-f3 = Flight.create airplane_id: 2, flight_date: "2018/06/02", origin: "SYD", destination: "PER"
-f4 = Flight.create airplane_id: 3, flight_date: "2018/06/07", origin: "CNS", destination: "ASP"
+f1 = Flight.create flight_number: "BA001", airplane_id: 1, flight_date: "2018/06/01", origin: "SYD", destination: "MEL"
+f2 = Flight.create flight_number: "BA556", airplane_id: 1, flight_date: "2018/06/02", origin: "MEL", destination: "BNE"
+f3 = Flight.create flight_number: "BA999", airplane_id: 2, flight_date: "2018/06/02", origin: "SYD", destination: "PER"
+f4 = Flight.create flight_number: "BA810", airplane_id: 3, flight_date: "2018/06/07", origin: "CNS", destination: "ASP"
 puts "Created [#{ Flight.all.length }] Flights"
 
 # Reservation
