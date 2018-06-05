@@ -1,11 +1,10 @@
-<h1>Airplane Show</h1>
+<h1>Airplane <%= @airplane.name %></h1>
 
 
-The Airplane is: <%= @airplane.name %><br>
-It has <%= @airplane.rows %><br>
-It has <%= @airplane.cols %><br>
+Number of rows: <%= @airplane.rows %><br>
+Number of columns: <%= @airplane.cols %>
 
-
+<br>
 <%= link_to "Edit", edit_airplane_path(@airplane)%>
   |
   <%= link_to "Delete", airplane_path(@airplane), method: :delete%>

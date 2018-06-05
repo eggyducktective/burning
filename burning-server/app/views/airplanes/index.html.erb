@@ -1,11 +1,14 @@
 <h1>All Airplanes</h1>
 <ul>
   <% @airplanes.each do |a| %>
+  <br>
   <li>
-    Flight: <%= link_to a.name, airplane_path(a) %>
+    Airplane: <%= link_to a.name, airplane_path(a) %>
   </li>
   Rows: <%= a.rows %>
+  <br>
   Columns: <%= a.cols %>
   <br>
   <% end %>
+
 </ul>
