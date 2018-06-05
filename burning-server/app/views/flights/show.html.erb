@@ -1,0 +1,11 @@
+<h1>Flight Show</h1>
+
+
+The Flight Date is: <%= @flight.flight_date %><br>
+Origin is: <%= @flight.origin %><br>
+Destination is: <%= @flight.destination %><br>
+
+
+<%= link_to "Edit", edit_flight_path(@flight)%>
+  |
+  <%= link_to "Delete", flight_path(@flight), method: :delete%>

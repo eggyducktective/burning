@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to pages_path
     else
-      flash[:error] = "Invalid emial address or password"
+      flash[:error] = "Invalid user name or password"
       redirect_to login_path
     end
   end
