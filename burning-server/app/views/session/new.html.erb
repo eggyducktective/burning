@@ -1,2 +1,16 @@
 
 <h1>Login</h1>
+
+<%= form_tag login_path do %>
+  <strong> <%= flash[:error] %></strong>
+  <br>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, nil%>
+  <br>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password, nil%>
+  <br>
+  <br>
+  <%= submit_tag 'Login'%>
+<% end %>
