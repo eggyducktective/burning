@@ -10,7 +10,20 @@
   </head>
 
   <body>
-      <%= link_to 'Create a new Airplane', new_airplane_path %>
+
+    <nav class="right_nav">
+      <% if @current_user.present?%>
+        Welcome, <%= @current_user.name%>
+        |
+        <%= link_to 'Create a new Airplane', new_airplane_path %>
+        |
+        <%= link_to 'Logout', login_path, method: :delete%>
+
+      <% else %>
+        <%= link_to 'login', login_path%>
+      <% end %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
