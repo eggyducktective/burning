@@ -556,3 +556,421 @@ Migrating to CreateAirplanes (20180605051003)
   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
 >>>>>>> 5008857b4e3dca1ec67d7ca38eeab1cee966bf49
 >>>>>>> b34c30b4eb75451ed630d3747445fad54cb5be03
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:33:04 +1000
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 584ms (Views: 580.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-06-05 17:33:29 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:33:38 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:33:54 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:37:51 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (212.7ms)
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login_path' for #<#<Class:0x007f9a7b883ea8>:0x007f9a80adb930>):
+    1: 
+    2: <h1>Login</h1>
+    3: 
+    4: <%= form_tag login_path do %>
+    5: 
+    6:   <%= label_tag :email %>
+    7:   <%= email_field_tag :email, nil%>
+  
+app/views/session/new.html.erb:4:in `_app_views_session_new_html_erb___2013179322317572561_70150780305720'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-06-05 17:38:04 +1000
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.2ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 27ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:39:11 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:39:21 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:39:25 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-06-05 17:39:34 +1000
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [7 times] (1.7ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:40:37 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (89.3ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_field_tag' for #<#<Class:0x007f9a7c55c7b0>:0x007f9a7c1e2aa8>
+Did you mean?  number_field_tag
+               range_field_tag
+               date_field_tag
+               phone_field_tag
+               text_field_tag
+               email_field_tag
+               time_field_tag):
+    4: <%= form_tag login_path do %>
+    5: 
+    6:   <%= label_tag :name %>
+    7:   <%= name_field_tag :name, nil%>
+    8:   <br>
+    9:   <br>
+   10:   <%= label_tag :password %>
+  
+app/views/session/new.html.erb:7:in `block in _app_views_session_new_html_erb___2013179322317572561_70150738420160'
+app/views/session/new.html.erb:4:in `_app_views_session_new_html_erb___2013179322317572561_70150738420160'
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:41:55 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-06-05 17:46:06 +1000
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (1.8ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:47:17 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:47:30 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/93d1d2cf62dc68c0f1a42b742ce2e109" for 127.0.0.1 at 2018-06-05 17:47:44 +1000
+Started PUT "/__web_console/repl_sessions/93d1d2cf62dc68c0f1a42b742ce2e109" for 127.0.0.1 at 2018-06-05 17:47:55 +1000
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:49:10 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uY0psrX/HJhq/DhhSsHDv0XZQdF9xc83dnbbKbj8r1oxhVx+nGVDeXHvWwi2bIvjW04IEXgOq1YHhi8MtfipIQ==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 102ms (ActiveRecord: 26.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 17:49:10 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:49:13 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:49:18 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Soeh6KaEV8yYPsTqifzu7fYNRWqrn4d0uytMwcPtdtVImtLiwBOvilzmHpWirvnqU981a9lGnyjHFkWCguzoA==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 56ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 17:49:18 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:49:28 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:49:41 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vpClAq/UIi6DW0UVbI7kSUMFcZ5TfIhhzxhJXPgfrm02mNDOhk59z5hIJnyQI6wVXZI4Xla37AC+6L159RuoFg==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 59ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 17:49:41 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:50:29 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vpClAq/UIi6DW0UVbI7kSUMFcZ5TfIhhzxhJXPgfrm02mNDOhk59z5hIJnyQI6wVXZI4Xla37AC+6L159RuoFg==", "name"=>"Anna", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anna"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 57ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 17:50:29 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:50:50 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vpClAq/UIi6DW0UVbI7kSUMFcZ5TfIhhzxhJXPgfrm02mNDOhk59z5hIJnyQI6wVXZI4Xla37AC+6L159RuoFg==", "name"=>"Brendan", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Brendan"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 59ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 17:50:50 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:50:55 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vpClAq/UIi6DW0UVbI7kSUMFcZ5TfIhhzxhJXPgfrm02mNDOhk59z5hIJnyQI6wVXZI4Xla37AC+6L159RuoFg==", "name"=>"Brendan", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Brendan"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/login
+Completed 302 Found in 58ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:50:56 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:51:30 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:51:36 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"laXOFfH/iA+xOOfBXLXC+6acIU/u+QpsGvz0DsNz2G0drbvZ2GXX7qorhKigGIqnuAtoj+sybg1rDAArznfeFg==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/login
+Completed 302 Found in 57ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:51:36 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:56:04 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:56:20 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NVyg5HC0fvbtu4CKg0xx69X4mi44FLMMMoJlA6NPkWW9VNUoWS4hF/ao4+N/4Tm3y2/T7j3f121DcpEmrkuXHg==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/login
+Completed 302 Found in 59ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:56:20 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 17:56:31 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FJeuTZkrA0Ga8nYdoBKaVO0kM0jxCQrLD9dkTSTSyaWcn9uBsLFcoIHhFXRcv9II87N6iPTCbqp+J5BoKdbP3g==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 56ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 17:56:31 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 17:56:57 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 18:00:18 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BW1r16YmBMGHSeLdq4ovw1wT7VVG5WLi3PZM6+Zvq8uNZR4bj7xbIJxagbRXJ2efQoSklUMuBoOtBrjO62utsA==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 56ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 18:00:18 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 18:02:06 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-05 18:02:09 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-05 18:02:13 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lq6y6rxzeXovG9b6lV48NPOULUppVeeKkq2VWEzr9dqmpscmlekmmzQItZNp83Ro7QNkimyeg+vjXWF9Qe/zoQ==", "name"=>"Bagi", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Bagi"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 56ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-06-05 18:02:13 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
