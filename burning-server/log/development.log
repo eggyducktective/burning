@@ -1064,3 +1064,109 @@ Processing by SessionController#new as HTML
 Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-05 18:16:46 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-06-05 18:17:34 +1000
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (3.8ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2018-06-05 18:17:44 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.8ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  ↳ app/views/airplanes/index.html.erb:3
+  Rendered airplanes/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 53ms (Views: 35.0ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-06-05 18:49:24 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  Rendered flights/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Flights Index</h1>
+    2: <h1>All Products</h1>
+    3: <% @flight.each do |f| %>
+    4:   <div>
+    5:     <%= f.label :airplane_id, 'Airplane Id :'%>
+    6:     <%= f.airplane_id%>
+  
+app/views/flights/index.html.erb:3:in `_app_views_flights_index_html_erb___3035800526543317245_70150766122920'
+Started GET "/flights" for 127.0.0.1 at 2018-06-05 18:51:03 +1000
+Processing by FlightsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/flights_controller.rb:10:in `index'
+Started PUT "/__web_console/repl_sessions/c2a232fefe26c44370fafa22697c66d4" for 127.0.0.1 at 2018-06-05 18:51:08 +1000
+Started PUT "/__web_console/repl_sessions/c2a232fefe26c44370fafa22697c66d4" for 127.0.0.1 at 2018-06-05 18:51:11 +1000
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started PUT "/__web_console/repl_sessions/c2a232fefe26c44370fafa22697c66d4" for 127.0.0.1 at 2018-06-05 18:51:22 +1000
+Started PUT "/__web_console/repl_sessions/c2a232fefe26c44370fafa22697c66d4" for 127.0.0.1 at 2018-06-05 18:51:23 +1000
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ /Users/bhagavathichirra/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/flights" for 127.0.0.1 at 2018-06-05 18:53:22 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  Rendered flights/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Flights Index</h1>
+    2: <h1>All Products</h1>
+    3: <% @flight.each do |f| %>
+    4:   <div>
+    5:     <%= f.label :airplane_id, 'Airplane Id :'%>
+    6:     <%= f.airplane_id%>
+  
+app/views/flights/index.html.erb:3:in `_app_views_flights_index_html_erb___3035800526543317245_70150739199620'
+Started GET "/flights" for 127.0.0.1 at 2018-06-05 18:53:49 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  Rendered flights/index.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `label' for #<Flight:0x007f9a80c09dc0>):
+    2: <h1>All Products</h1>
+    3: <% @flights.each do |f| %>
+    4:   <div>
+    5:     <%= f.label :airplane_id, 'Airplane Id :'%>
+    6:     <%= f.airplane_id%>
+    7:     <%= f.label :flight_date, 'Flight Date :'%>
+    8:     <%= f.airplane_id%>
+  
+app/views/flights/index.html.erb:5:in `block in _app_views_flights_index_html_erb___3035800526543317245_70150787802980'
+app/views/flights/index.html.erb:3:in `_app_views_flights_index_html_erb___3035800526543317245_70150787802980'
+Started GET "/flights" for 127.0.0.1 at 2018-06-05 18:54:29 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  Rendered flights/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.3ms)
+
+
