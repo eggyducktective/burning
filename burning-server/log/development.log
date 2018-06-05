@@ -161,6 +161,7 @@ Migrating to CreateUsers (20180605051414)
   ↳ bin/rails:4
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+<<<<<<< HEAD
   [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "burning-server_development" ENCODING = 'unicode'[0m
   ↳ bin/rails:4
   [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "burning-server_test" ENCODING = 'unicode'[0m
@@ -377,3 +378,181 @@ Migrating to CreateUsers (20180605051414)
   ↳ db/seeds.rb:39
   [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
   ↳ db/seeds.rb:40
+=======
+<<<<<<< HEAD
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(157677156946913100)[0m
+  ↳ bin/rails:4
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(157677156946913100)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAirplane Load (4.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mFlight Load (2.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReservation Load (4.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "admin_flag", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brendan"], ["admin_flag", true], ["password_digest", "$2a$10$CMcm3pT/KVRLs1YU9kb5f.WFDHrPChua3NJ/2u9QaQ5t3Op/Wd78O"], ["created_at", "2018-06-05 06:16:37.559376"], ["updated_at", "2018-06-05 06:16:37.559376"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "admin_flag", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Anna"], ["admin_flag", false], ["password_digest", "$2a$10$NRPPTwbhyzccrw4e2n9b3.Q1laIujHY8CNVDg0uAHJ8irJWqq1PxO"], ["created_at", "2018-06-05 06:16:37.651754"], ["updated_at", "2018-06-05 06:16:37.651754"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "admin_flag", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bagi"], ["admin_flag", true], ["password_digest", "$2a$10$/2HKiD7muRaEUH5FmYTwneAXR35nFbPK6.CmX.MNDOd00Qcqr1jwS"], ["created_at", "2018-06-05 06:16:37.751917"], ["updated_at", "2018-06-05 06:16:37.751917"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mAirplane Create (3.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 30], ["cols", 4], ["created_at", "2018-06-05 06:16:37.770494"], ["updated_at", "2018-06-05 06:16:37.770494"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mAirplane Create (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "757"], ["rows", 22], ["cols", 2], ["created_at", "2018-06-05 06:16:37.778385"], ["updated_at", "2018-06-05 06:16:37.778385"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mAirplane Create (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "767"], ["rows", 18], ["cols", 4], ["created_at", "2018-06-05 06:16:37.783237"], ["updated_at", "2018-06-05 06:16:37.783237"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mAirplane Load (0.4ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mFlight Create (7.0ms)[0m  [1m[32mINSERT INTO "flights" ("airplane_id", "flight_date", "origin", "destination", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["airplane_id", 1], ["flight_date", "2018-06-01"], ["origin", "SYD"], ["destination", "MEL"], ["created_at", "2018-06-05 06:16:37.799971"], ["updated_at", "2018-06-05 06:16:37.799971"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mFlight Create (0.7ms)[0m  [1m[32mINSERT INTO "flights" ("airplane_id", "flight_date", "origin", "destination", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["airplane_id", 1], ["flight_date", "2018-06-02"], ["origin", "MEL"], ["destination", "BNE"], ["created_at", "2018-06-05 06:16:37.823032"], ["updated_at", "2018-06-05 06:16:37.823032"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFlight Create (0.8ms)[0m  [1m[32mINSERT INTO "flights" ("airplane_id", "flight_date", "origin", "destination", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["airplane_id", 2], ["flight_date", "2018-06-02"], ["origin", "SYD"], ["destination", "PER"], ["created_at", "2018-06-05 06:16:37.833269"], ["updated_at", "2018-06-05 06:16:37.833269"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mFlight Create (0.8ms)[0m  [1m[32mINSERT INTO "flights" ("airplane_id", "flight_date", "origin", "destination", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["airplane_id", 3], ["flight_date", "2018-06-07"], ["origin", "CNS"], ["destination", "ASP"], ["created_at", "2018-06-05 06:16:37.839981"], ["updated_at", "2018-06-05 06:16:37.839981"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mReservation Create (0.9ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "row", "col", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["flight_id", 1], ["row", 10], ["col", 4], ["created_at", "2018-06-05 06:16:37.862533"], ["updated_at", "2018-06-05 06:16:37.862533"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "row", "col", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["flight_id", 2], ["row", 20], ["col", 1], ["created_at", "2018-06-05 06:16:37.868170"], ["updated_at", "2018-06-05 06:16:37.868170"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mReservation Create (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "row", "col", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 3], ["flight_id", 2], ["row", 20], ["col", 2], ["created_at", "2018-06-05 06:16:37.872947"], ["updated_at", "2018-06-05 06:16:37.872947"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "row", "col", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["flight_id", 3], ["row", 15], ["col", 2], ["created_at", "2018-06-05 06:16:37.877952"], ["updated_at", "2018-06-05 06:16:37.877952"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "row", "col", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 3], ["flight_id", 4], ["row", 8], ["col", 3], ["created_at", "2018-06-05 06:16:37.882520"], ["updated_at", "2018-06-05 06:16:37.882520"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:40
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2018-06-05 16:52:51 +1000
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anh/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/anh/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/anh/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 41ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFlight Load (2.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mAirplane Load (1.1ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+=======
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE DATABASE "burning-server_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "burning-server_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(157677156946913100)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateAirplanes (20180605051003)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (35.2ms)[0m  [1m[35mCREATE TABLE "airplanes" ("id" bigserial primary key, "name" text, "rows" integer, "cols" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180605051003_create_airplanes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(157677156946913100)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "burning-server_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "burning-server_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(157677156946913100)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateAirplanes (20180605051003)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "airplanes" ("id" bigserial primary key, "name" text, "rows" integer, "cols" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180605051003_create_airplanes.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(157677156946913100)[0m
+  ↳ bin/rails:4
+  [1m[36mAirplane Load (0.7ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+>>>>>>> 5008857b4e3dca1ec67d7ca38eeab1cee966bf49
+>>>>>>> b34c30b4eb75451ed630d3747445fad54cb5be03
