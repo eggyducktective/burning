@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../App.css'
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
@@ -10,7 +11,7 @@ class SeatMap extends Component {
 
     this.state = {
       flights: []
-    }    
+    }
   }
 
   render () {

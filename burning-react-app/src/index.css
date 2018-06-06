@@ -1,13 +1,1 @@
-body {
-  margin: 12px;
-  padding: 5px;
-  font-family: sans-serif;
-}
 
-h1, li, .form {
-  text-align: center;
-}
-
-.searchResults {
-  width: 323px;
-}
