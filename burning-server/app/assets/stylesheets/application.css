@@ -18,3 +18,7 @@
 table, td, tr {
   border: 1px solid black;
 }
+
+.alphabet {
+  font-weight: bold;
+}

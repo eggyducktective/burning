@@ -15,3 +15,36 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  let rowCount = 0;
+
+  const createTable = function() {
+
+    mytable = $('<table></table>')
+
+    for (var i = 0; i <= rows; i++) {
+      if (i === 0) {
+        $(`<th>&nbsp;</td>`).appendTo(mytable);
+      } else {
+        $(`<th>${ i }</td>`).appendTo(mytable);
+      }
+    }
+
+    for (var i = 0; i < cols; i++) {
+      var row = $('<tr></tr>').appendTo(mytable);
+
+      for (var j = 0; j < rows; j++) {
+        if (j === 0) {
+          $('<td class="alphabet"></td>').text(`${ alphabet[`${ rowCount }`] }`).appendTo(row);
+          rowCount = rowCount + 1;
+        }
+        $('<td></td>').text("seat").appendTo(row);
+      }
+    }
+    $('#plane_table').append(mytable);
+  }
+  createTable();
+});
