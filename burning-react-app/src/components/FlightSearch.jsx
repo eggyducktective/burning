@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
+
 class FlightSearch extends Component {
 
   constructor(){
@@ -16,7 +17,7 @@ class FlightSearch extends Component {
       destinationList: [],
       origin: '',
       destination: '',
-      searchResults: []
+      searchResults: null
     }
 
     this._handleOriginChange = this._handleOriginChange.bind( this );
@@ -95,6 +96,7 @@ class FlightSearch extends Component {
     return (
       <div className="form">
       <form onSubmit={ this._handleSubmit }>
+
         <label htmlFor="origin">Origin: </label>
         <select onChange={ this._handleOriginChange } >
           {
@@ -114,6 +116,9 @@ class FlightSearch extends Component {
 
         <br />
         <br />
+
+        {
+          this.state.searchResults !== null && this.state.searchResults.length ?
           <table className="searchResults">
             <tr>
               <td>Flight Number</td>
@@ -121,17 +126,24 @@ class FlightSearch extends Component {
               <td>Origin</td>
               <td>Destination</td>
             </tr>
-        {
-        this.state.searchResults.length && this.state.searchResults.map((flight, index) => (
-        <tr key={ index }>
-          <td>{ flight.flight_number }</td>
-          <td>{ flight.flight_date }</td>
-          <td>{ flight.origin }</td>
-          <td>{ flight.destination }</td>
-        </tr>
+            {
+            this.state.searchResults !== null && this.state.searchResults.map((flight, index) => (
+            <tr key={ index }>
+              <td>{ flight.flight_number }</td>
+              <td>{ flight.flight_date }</td>
+              <td>{ flight.origin }</td>
+              <td>{ flight.destination }</td>
+            </tr>
 
-        ))}
-        </table>
+            ))}
+          </table>
+          :
+          <div>
+          {
+            this.state.searchResults !== null  ?  <h3>No Flights From {this.state.origin} To {this.state.destination} </h3> : <h3>Please choose Origin and Destination and Click Search</h3>
+          }
+          </div>
+        }
       </div>
     );
   }
