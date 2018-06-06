@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../App.css';
+
 
 
 class Home extends Component {
@@ -8,7 +8,9 @@ class Home extends Component {
     return(
       <div>
         <h1>Welcome to Burning Airlines Service</h1>
-          <li>Why not book a flight right now? You deserve it. <Link to="/flight"> Flight Booking</Link></li>
+          <li>Why not book a flight right now? You deserve it. <Link to="/flight"> Flight Search</Link></li>
+
+
       </div>
     );
   }
