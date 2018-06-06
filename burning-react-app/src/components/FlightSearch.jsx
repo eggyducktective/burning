@@ -118,7 +118,7 @@ class FlightSearch extends Component {
         <br />
         <br />
 
-        <CreateFlightSearchResultsTable searchResults={ this.state.searchResults } origon={this.state.origin} destination={this.state.destination} />
+        <CreateFlightSearchResultsTable searchResults={ this.state.searchResults } origin={this.state.origin} destination={this.state.destination} />
 
       </div>
     );
