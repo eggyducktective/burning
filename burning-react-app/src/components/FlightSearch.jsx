@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
 class FlightSearch extends Component {
 
-  constructor( props ){
-    super( props );
+  constructor(){
+    super();
 
     this.state = {
       flights: [],
@@ -51,8 +53,8 @@ class FlightSearch extends Component {
   }
 
   // Needed for axios
-  componentDidMount(){    
-    // Put it in here - this will run AFTER the component mounts and has done a render() once    
+  componentDidMount(){
+    // Put it in here - this will run AFTER the component mounts and has done a render() once
     const fetchFlights = () => axios.get( SERVER_URL )
     .then( response => {
       this.setState({ flights: response.data });
@@ -76,7 +78,7 @@ class FlightSearch extends Component {
         searchResults2.push( flight );
       }
     }
-    console.log('a1', searchResults2);
+
 
     this.setState({ searchResults: searchResults2 });
   }
@@ -84,14 +86,14 @@ class FlightSearch extends Component {
   _handleOriginChange( event ){
     this.setState({ origin: event.target.value });
   }
-  
+
   _handleDestinationChange( event ){
     this.setState({ destination: event.target.value });
   }
 
   render () {
     return (
-      <div>
+      <div className="form">
       <form onSubmit={ this._handleSubmit }>
         <label htmlFor="origin">Origin: </label>
         <select onChange={ this._handleOriginChange } >
@@ -108,7 +110,7 @@ class FlightSearch extends Component {
         </select>
         &nbsp;&nbsp;
         <input type="submit" value="Search for Flights"/>
-        </form> 
+        </form>
 
         <br />
         <br />
@@ -127,10 +129,10 @@ class FlightSearch extends Component {
           <td>{ flight.origin }</td>
           <td>{ flight.destination }</td>
         </tr>
-        
+
         ))}
         </table>
-      </div>  
+      </div>
     );
   }
 }

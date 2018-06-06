@@ -1,5 +1,13 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 12px;
+  padding: 5px;
   font-family: sans-serif;
+}
+
+h1, li, .form {
+  text-align: center;
+}
+
+.searchResults {
+  width: 323px;
 }
