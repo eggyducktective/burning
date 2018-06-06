@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
 
 class FlightSearch extends Component {
 
-  constructor( props ){
-    super( props );
+  constructor(){
+    super();
 
     this.state = {
       flights: [],
@@ -77,7 +79,7 @@ class FlightSearch extends Component {
         searchResults2.push( flight );
       }
     }
-    console.log('a1', searchResults2);
+
 
     this.setState({ searchResults: searchResults2 });
   }
@@ -92,7 +94,7 @@ class FlightSearch extends Component {
 
   render () {
     return (
-      <div>
+      <div className="form">
       <form onSubmit={ this._handleSubmit }>
 
         <label htmlFor="origin">Origin: </label>
