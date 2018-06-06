@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
+
 class FlightSearch extends Component {
 
   constructor( props ){
@@ -14,7 +15,7 @@ class FlightSearch extends Component {
       destinationList: [],
       origin: '',
       destination: '',
-      searchResults: []
+      searchResults: null
     }
 
     this._handleOriginChange = this._handleOriginChange.bind( this );
@@ -51,8 +52,8 @@ class FlightSearch extends Component {
   }
 
   // Needed for axios
-  componentDidMount(){    
-    // Put it in here - this will run AFTER the component mounts and has done a render() once    
+  componentDidMount(){
+    // Put it in here - this will run AFTER the component mounts and has done a render() once
     const fetchFlights = () => axios.get( SERVER_URL )
     .then( response => {
       this.setState({ flights: response.data });
@@ -84,7 +85,7 @@ class FlightSearch extends Component {
   _handleOriginChange( event ){
     this.setState({ origin: event.target.value });
   }
-  
+
   _handleDestinationChange( event ){
     this.setState({ destination: event.target.value });
   }
@@ -93,6 +94,7 @@ class FlightSearch extends Component {
     return (
       <div>
       <form onSubmit={ this._handleSubmit }>
+
         <label htmlFor="origin">Origin: </label>
         <select onChange={ this._handleOriginChange } >
           {
@@ -108,10 +110,13 @@ class FlightSearch extends Component {
         </select>
         &nbsp;&nbsp;
         <input type="submit" value="Search for Flights"/>
-        </form> 
+        </form>
 
         <br />
         <br />
+
+        {
+          this.state.searchResults !== null && this.state.searchResults.length ?
           <table className="searchResults">
             <tr>
               <td>Flight Number</td>
@@ -119,18 +124,25 @@ class FlightSearch extends Component {
               <td>Origin</td>
               <td>Destination</td>
             </tr>
-        {
-        this.state.searchResults.length && this.state.searchResults.map((flight, index) => (
-        <tr key={ index }>
-          <td>{ flight.flight_number }</td>
-          <td>{ flight.flight_date }</td>
-          <td>{ flight.origin }</td>
-          <td>{ flight.destination }</td>
-        </tr>
-        
-        ))}
-        </table>
-      </div>  
+            {
+            this.state.searchResults !== null && this.state.searchResults.map((flight, index) => (
+            <tr key={ index }>
+              <td>{ flight.flight_number }</td>
+              <td>{ flight.flight_date }</td>
+              <td>{ flight.origin }</td>
+              <td>{ flight.destination }</td>
+            </tr>
+
+            ))}
+          </table>
+          :
+          <div>
+          {
+            this.state.searchResults !== null  ?  <h3>No Flights From {this.state.origin} To {this.state.destination} </h3> : <h3>Please choose Origin and Destination and Click Search</h3>
+          }
+          </div>
+        }
+      </div>
     );
   }
 }
