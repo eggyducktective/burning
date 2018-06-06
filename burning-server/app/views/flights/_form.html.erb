@@ -1,6 +1,13 @@
 <%= form_for @flight do |f| %>
+
 <%= f.label :flight_date %>
 <%= f.text_field :flight_date %>
+<br>
+<%= f.label :flight_number %>
+<%= f.text_field :flight_number %>
+<br>
+  <%= f.label :airplane_id, 'Flight :' %>
+  <%= f.select :airplane_id, Flight.pluck(:airplane_id), include_blank: true , class: :field%>
 <br>
 <%= f.label :origin %>
 <%= f.text_field :origin %>

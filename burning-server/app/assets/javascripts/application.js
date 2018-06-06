@@ -15,3 +15,29 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+
+
+
+      const createTable = function() {
+
+
+
+        let mytable = $('<table></table>')
+
+        for (var i = 0; i < rows; i++) {
+          var row = $('<tr></tr>').appendTo(mytable);
+          for (var j = 0; j < cols; j++) {
+            $('<td></td>').text("text1").appendTo(row);
+          }
+
+        }
+
+        $('#plane_table').append(mytable);
+
+      }
+
+        createTable();
+      });

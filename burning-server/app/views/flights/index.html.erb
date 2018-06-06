@@ -2,11 +2,16 @@
 <h1>All Flights</h1>
 <ul>
   <% @flights.each do |f| %>
-    <%= link_to flight_path(f) do %>
+
       The flight date is: <%= f.flight_date %>
+      <%= link_to f.flight_number, flight_path(f)%>
       Origin: <%= f.origin %>
       Destination: <%= f.destination %>
+      Plane: <%= f.airplane.name%>
+
+      Seats: <%= f.available_seats %>
+
       <br>
-    <% end %>
+
   <% end %>
 </ul>

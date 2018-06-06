@@ -6,7 +6,7 @@ class FlightsController < ApplicationController
   def create
     flight = Flight.new flight_params
     flight.save
-    redirect_to flight_path
+    redirect_to flight_path(flight)
   end
 
   def show
@@ -15,6 +15,7 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
+    @reservations = Reservation.all
   end
 
   def edit
@@ -37,7 +38,7 @@ class FlightsController < ApplicationController
   private
 
   def flight_params
-    params.require(:flight).permit(:flight_date, :origin , :destination)
+    params.require(:flight).permit(:flight_number, :flight_date, :origin , :destination, :airplane_id)
   end
 
 
