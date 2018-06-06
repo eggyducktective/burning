@@ -15,12 +15,20 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
+<<<<<<< HEAD
+=======
+    @reservations = Reservation.all
+>>>>>>> 47c69684492148d4f7d7bcb1d14017bd60dd9770
     respond_to do |format|
       format.html
       format.json do
         render json: @flights
       end
     end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 47c69684492148d4f7d7bcb1d14017bd60dd9770
   end
 
   def edit
