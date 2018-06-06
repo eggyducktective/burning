@@ -1,7 +1,8 @@
 
-<h1>Login</h1>
+
 <% if @current_user.present?%>
   <%= link_to pages_path %>
+
 <% else %>
   <%= form_tag login_path do %>
     <strong> <%= flash[:error] %></strong>
