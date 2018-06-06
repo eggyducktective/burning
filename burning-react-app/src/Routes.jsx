@@ -4,6 +4,7 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 
 import Home from './components/Home.jsx';
 import FlightSearch from './components/FlightSearch.jsx';
+import Reservation from './components/Reservation.jsx';
 
 
 const Routes = (
@@ -11,6 +12,7 @@ const Routes = (
     <div>
       <Route exact path="/" component={ Home } />
       <Route exact path="/flight" component={ FlightSearch } />
+      <Route path="/reservation/:id" component={ Reservation } />
     </div>
   </Router>
 );

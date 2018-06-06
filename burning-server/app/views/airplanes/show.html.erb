@@ -8,20 +8,11 @@ Number of columns: <%= @airplane.cols %>
 <%= link_to "Edit", edit_airplane_path(@airplane)%>
   |
   <%= link_to "Delete", airplane_path(@airplane), method: :delete%>
-
-<<<<<<< HEAD
+  <br>
+  <h3>Seating Map:</h3>
   <script>
     var rows = <%= @airplane.rows %>
 
     var cols = <%= @airplane.cols %>
   </script>
   <div id="plane_table"></div>
-=======
-
-<h3>Seating map</h3>
-<script>
-  var rows = <%= @airplane.rows %>
-  var cols = <%= @airplane.cols %>
-</script>
-<div id="plane_table"></div>
->>>>>>> d73b0731c53f5428df82f236f402d35f4ef685e3

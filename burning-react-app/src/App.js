@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import FlightSearch from './components/FlightSearch.jsx';
+import Reservation from './components/Reservation.jsx';
 
 class App extends Component {
   render() {
@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header>
           <h1 className="App-title">Welcome to Burning Airlines</h1>
-          <FlightSearch />
+          <Reservation />
         </header>
       </div>
     );
