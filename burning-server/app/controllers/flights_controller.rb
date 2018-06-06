@@ -10,7 +10,13 @@ class FlightsController < ApplicationController
   end
 
   def show
-  @flight = Flight.find params[:id]
+    @flight = Flight.find params[:id]
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: @flight
+      end
+    end
   end
 
   def index

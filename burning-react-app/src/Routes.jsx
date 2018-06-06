@@ -12,7 +12,7 @@ const Routes = (
     <div>
       <Route exact path="/" component={ Home } />
       <Route exact path="/flight" component={ FlightSearch } />
-      <Route exact path="/reservation" component={ Reservation } />
+      <Route path="/reservation/:id" component={ Reservation } />
     </div>
   </Router>
 );
