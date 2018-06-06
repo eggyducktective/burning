@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import FlightDetails from '../components/FlightDetails.jsx' 
-import SeatMap from '../components/SeatMap.jsx' 
+import FlightDetails from '../components/FlightDetails.jsx'
+import SeatMap from '../components/SeatMap.jsx'
+import '../App.css'
 
 const SERVER_URL_PREFIX = 'http://localhost:3000/flights';
 
@@ -27,12 +28,12 @@ class Reservation extends Component {
 
     getSingleFlightDetail();
   }
-  
+
   render () {
     return (
       <div>
         <h1>This is in Reservation</h1>
-        <FlightDetails 
+        <FlightDetails
           flight={ this.state.flight }
         />
         <SeatMap />

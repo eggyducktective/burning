@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../App.css'
 
 
 const SERVER_URL = 'http://localhost:3000/search.json';
