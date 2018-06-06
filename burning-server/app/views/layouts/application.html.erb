@@ -15,9 +15,9 @@
       <% if @current_user.present?%>
         Welcome, <%= @current_user.name%>
         |
-        <%= link_to 'Add Airplane', new_airplane_path %>
+        <%= link_to 'All Flights', flights_path %>
         |
-        <%= link_to 'Add Flight', new_flight_path %>
+        <%= link_to 'All Airplanes', airplanes_path %>
         |
         <%= link_to 'Logout', login_path, method: :delete%>
 

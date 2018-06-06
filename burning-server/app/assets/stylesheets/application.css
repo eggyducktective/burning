@@ -19,8 +19,14 @@ table, td, tr {
   border: 1px solid black;
 }
 
+<<<<<<< HEAD
 .field{
    margin: 10px;
    height: 25px;
    width: 200px;
  }
+=======
+.alphabet {
+  font-weight: bold;
+}
+>>>>>>> d73b0731c53f5428df82f236f402d35f4ef685e3
