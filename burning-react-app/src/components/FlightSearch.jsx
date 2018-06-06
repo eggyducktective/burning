@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
-class FlightSearchForm extends Component {
+class FlightSearch extends Component {
 
   constructor( props ){
     super( props );
@@ -135,4 +135,4 @@ class FlightSearchForm extends Component {
   }
 }
 
-export default FlightSearchForm;
+export default FlightSearch;
