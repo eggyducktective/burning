@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "/search" => 'flights#index'
   get "/users" => 'users#index'
   get "/reservations" => 'reservations#index'
+  get "/flightRes/:id" => 'reservations#single_flight_reservation'
   resources :airplanes, :flights
 end
