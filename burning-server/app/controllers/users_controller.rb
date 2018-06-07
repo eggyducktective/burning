@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  ActiveRecord::Base.include_root_in_json = false
   def new
   end
 
@@ -6,6 +7,14 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: @users
+      end
+    end
+
   end
 
   def show
