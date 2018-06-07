@@ -20,7 +20,7 @@ function Seat(props) {
 
   return (
     <button className={ aisleCol === col ? "seat aisleRight" : "seat" } >
-      Seat { props.row }{ alphaCol } Brendan
+      Seat { props.row }{ alphaCol } { props.seatName }
     </button>
   )
 }
@@ -28,17 +28,42 @@ function Seat(props) {
 class SeatMap extends Component {
   constructor( props ){
     super( props );
+    this.state={
+      loginUser: 1
+    }
+  }
+
+  _handleSubmit( event ){
+    event.preventDefault();
+    // Axios post code here
+  }
+
+  returnReservedSeatName = ( row, col, reservations ) => {
+    console.log('row: ', row);
+    console.log('col: ', col);
+    console.log('props: ', reservations);
+    let seatName = "AVAILABLE";
+
+    for ( let currentRes = 0; currentRes < reservations.length; currentRes++ ){
+      if ( row === reservations[currentRes].row && col === reservations[currentRes].col ){
+        return reservations[currentRes].user_id;
+      }
+    }
+    return seatName;
   }
 
   createSeatMap = ( props ) => {
     const numRows = this.props.flight.airplane.rows;
     const numCols = this.props.flight.airplane.cols;
+    const reservations = this.props.flight.reservations;
 
+    let seatName;
     let seatMap = [];
     for ( let currentRow = 1; currentRow <= numRows; currentRow++ ){
       let seatRow = [];
       for ( let currentCol = 1; currentCol <= numCols; currentCol++ ){
-        seatRow.push(<Seat row={ currentRow } col={ currentCol } numCols={ numCols } />)
+        seatName = this.returnReservedSeatName( currentRow, currentCol, reservations );
+        seatRow.push(<Seat row={ currentRow } col={ currentCol } numCols={ numCols } seatName={ seatName }/>)
       }
       seatMap.push(<div>{ seatRow }</div>);
     }
@@ -48,7 +73,10 @@ class SeatMap extends Component {
   render () {
     return (
       <div className="seatMap">
+        <form onSubmit={ this._handleSubmit }>
         { this.createSeatMap() }
+          <input type="submit" value="Save Your Reservation" />
+        </form>
       </div>
     )
   }
