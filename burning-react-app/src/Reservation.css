@@ -1,0 +1,19 @@
+.seatMap {
+  text-align: center;
+  margin: 20px;
+}
+
+.seat {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 15%;
+}
+
+.flightDetails {
+  text-align: center;
+}
+
+.flightDetailsTable {
+  margin: 0 auto;
+}

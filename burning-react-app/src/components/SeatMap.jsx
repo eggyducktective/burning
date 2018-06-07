@@ -4,20 +4,41 @@ import '../App.css'
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
-class SeatMap extends Component {
+function Seat(props) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const alphaCol = alphabet[`${ props.col - 1 }`];
 
+  return (
+    <button className="seat">
+      Seat { props.row }, { alphaCol }
+    </button>
+  )
+}
+
+class SeatMap extends Component {
   constructor( props ){
     super( props );
+  }
 
-    this.state = {
-      flights: []
+  createSeatMap = ( props ) => {
+    const numRows = this.props.flight.airplane.rows;
+    const numCols = this.props.flight.airplane.cols;
+
+    let seatMap = [];
+    for ( let currentRow = 1; currentRow <= numRows; currentRow++ ){
+      let seatRow = [];
+      for ( let currentCol = 1; currentCol <= numCols; currentCol++ ){
+        seatRow.push(<Seat row={ currentRow } col={ currentCol } />)
+      }
+      seatMap.push(<div>{ seatRow }</div>);     
     }
+    return seatMap;
   }
 
   render () {
     return (
-      <div>
-        <h1>This is in SeatMap</h1>
+      <div className="seatMap">
+        { this.createSeatMap() }
       </div>
     )
   }
