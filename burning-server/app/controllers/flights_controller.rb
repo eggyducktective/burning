@@ -17,7 +17,7 @@ class FlightsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render json: @flight, include: [:airplane, :reservations]
+        render :json => @flight.to_json( {include:[:airplane, reservations:{include:[:user]}]} )
       end
     end
   end
@@ -27,7 +27,7 @@ class FlightsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render :json => @flights.as_json(include: :airplane)
+        render :json => @flights.as_json( :include => [ :airplane ])
       end
   end
 
