@@ -10,11 +10,12 @@ class FlightsController < ApplicationController
   end
 
   def show
-    @flight = Flight.find params[:id]
+    @flight = Flight.find(params[:id])
+
     respond_to do |format|
       format.html
       format.json do
-        render json: @flight
+        render :json => @flight.as_json(include: :airplane)
       end
     end
   end
@@ -24,7 +25,7 @@ class FlightsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render json: @flights
+        render :json => @flights.as_json(include: :airplane)
       end
   end
 
