@@ -16,7 +16,7 @@ const Routes = (
       <Route exact path="/flight" component={ FlightSearch } />
       <Route exact path="/flight/:id" component={ FlightShow } />
       <Route path="/reservation/:id" component={ Reservation } />
-      <Route path="/login" exact component={Login} />
+      <Route path="/login" component={Login} />
 
     </div>
   </Router>

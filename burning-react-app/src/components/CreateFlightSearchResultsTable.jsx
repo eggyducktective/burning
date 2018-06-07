@@ -12,12 +12,12 @@ class CreateFlightSearchResultsTable extends Component {
         this.props.searchResults !== null && this.props.searchResults.length ?
         <table className="searchResults">
           <thead>
-          <tr>
-            <th>Flight Number</th>
-            <th>Date</th>
-            <th>Origin</th>
-            <th>Destination</th>
-          </tr>
+            <tr>
+              <th>Flight Number</th>
+              <th>Date</th>
+              <th>Origin</th>
+              <th>Destination</th>
+            </tr>
           </thead>
           {
           this.props.searchResults !== null && this.props.searchResults.map((flight, index) => (
