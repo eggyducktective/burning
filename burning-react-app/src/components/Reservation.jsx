@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import FlightDetails from '../components/FlightDetails.jsx' 
 import SeatMap from '../components/SeatMap.jsx'
 import '../App.css' 
 import '../Reservation.css' 
+=======
+import FlightDetails from '../components/FlightDetails.jsx'
+import SeatMap from '../components/SeatMap.jsx'
+import '../App.css'
+>>>>>>> 829d8b45ff231332989037bc4e69a7e9819334ae
 
 const SERVER_URL_PREFIX = 'http://localhost:3000';
 
@@ -28,7 +34,7 @@ class Reservation extends Component {
     });
     getSingleFlightDetail();
   }
-  
+
   render () {
     let content;    
     if( this.state.flight.id ){

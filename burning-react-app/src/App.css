@@ -27,6 +27,20 @@
   to { transform: rotate(360deg); }
 }
 
-.searchResults td {
+.searchResults td , th{
   border: 1px solid hotpink;
+}
+
+body {
+  margin: 12px;
+  padding: 5px;
+  font-family: sans-serif;
+}
+
+h1, li, .form {
+  text-align: center;
+}
+
+.searchResults {
+  width: 323px;
 }

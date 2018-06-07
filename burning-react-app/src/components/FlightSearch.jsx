@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import '../App.css';
+import CreateFlightSearchResultsTable from './CreateFlightSearchResultsTable.jsx';
 
 const SERVER_URL = 'http://localhost:3000/search.json';
 
@@ -117,33 +118,8 @@ class FlightSearch extends Component {
         <br />
         <br />
 
-        {
-          this.state.searchResults !== null && this.state.searchResults.length ?
-          <table className="searchResults">
-            <tr>
-              <td>Flight Number</td>
-              <td>Date</td>
-              <td>Origin</td>
-              <td>Destination</td>
-            </tr>
-            {
-            this.state.searchResults !== null && this.state.searchResults.map((flight, index) => (
-            <tr key={ index }>
-              <td>{ flight.flight_number }</td>
-              <td>{ flight.flight_date }</td>
-              <td>{ flight.origin }</td>
-              <td>{ flight.destination }</td>
-            </tr>
+        <CreateFlightSearchResultsTable searchResults={ this.state.searchResults } origin={this.state.origin} destination={this.state.destination} />
 
-            ))}
-          </table>
-          :
-          <div>
-          {
-            this.state.searchResults !== null  ?  <h3>No Flights From {this.state.origin} To {this.state.destination} </h3> : <h3>Please choose Origin and Destination and Click Search</h3>
-          }
-          </div>
-        }
       </div>
     );
   }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../Reservation.css';
 import axios from 'axios';
-import SeatMap from '../components/SeatMap.jsx' 
+import SeatMap from '../components/SeatMap.jsx'
+import '../App.css'
 
 function CreateTableHeader(){
   return (
