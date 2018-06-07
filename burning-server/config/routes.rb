@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/pages" => "pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get "/search" => 'flights#index';
+  get "/search" => 'flights#index'
+  get "/users" => 'users#index'
+  get "/reservations" => 'reservations#index'
   resources :airplanes, :flights
 end

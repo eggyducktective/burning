@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    format.json do
+      render :json => @flight.as_json(include: :airplane)
+    end
   end
 
   def show
