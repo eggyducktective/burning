@@ -24,7 +24,6 @@ class SeatMap extends Component {
     const numRows = this.props.flight.airplane.rows;
     const numCols = this.props.flight.airplane.cols;
 
-<<<<<<< HEAD
     let seatMap = [];
     for ( let currentRow = 1; currentRow <= numRows; currentRow++ ){
       let seatRow = [];
@@ -34,11 +33,6 @@ class SeatMap extends Component {
       seatMap.push(<div>{ seatRow }</div>);     
     }
     return seatMap;
-=======
-    this.state = {
-      flights: []
-    }
->>>>>>> 829d8b45ff231332989037bc4e69a7e9819334ae
   }
 
   render () {
