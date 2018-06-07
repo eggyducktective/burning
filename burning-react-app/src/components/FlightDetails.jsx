@@ -9,10 +9,10 @@ function CreateTableHeader(){
   return (
     <thead>
       <tr>
-        <td>Date</td>
-        <td>Flight</td>
-        <td>From > To</td>
-        <td>Plane</td>
+        <th>Date</th>
+        <th>Flight</th>
+        <th>From > To</th>
+        <th>Plane</th>
       </tr>
     </thead>
   )
@@ -20,18 +20,20 @@ function CreateTableHeader(){
 
 function DisplayFlightRow( props ) {
   return (
-    <tr key={ props.flight.flight_number }>
-      <td>{ props.flight.flight_number }</td>
-      <td>{ props.flight.flight_date }</td>
-      <td>{ props.flight.origin }&nbsp;>&nbsp;{ props.flight.destination }</td>
-      <td>{ props.flight.airplane.name }</td>
-    </tr>
+    <tbody key={ props.flight.flight_number }>
+      <tr>
+        <td>{ props.flight.flight_number }</td>
+        <td>{ props.flight.flight_date }</td>
+        <td>{ props.flight.origin }&nbsp;>&nbsp;{ props.flight.destination }</td>
+        <td>{ props.flight.airplane.name }</td>
+      </tr>
+    </tbody>
   )
 }
 
 class FlightDetails extends Component {
   constructor( props ){
-    super( props );    
+    super( props );
   }
 
   render () {

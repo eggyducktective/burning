@@ -27,21 +27,9 @@ function Seat(props) {
 
 class SeatMap extends Component {
   constructor( props ){
-    super( props );    
+    super( props );
   }
 
-  // Needed for axios
-  componentDidMount(){
-    // Put it in here - this will run AFTER the component mounts and has done a render() once
-    let SERVER_URL = `${ SERVER_URL_PREFIX }/flightRes/${ this.props.flight.id }.json`;
-
-    const getSingleFlightReservations = () => axios.get( SERVER_URL )
-    .then( response => {
-      this.setState({ flight: response.data });
-    });
-    getSingleFlightDetail();
-  }
-  
   createSeatMap = ( props ) => {
     const numRows = this.props.flight.airplane.rows;
     const numCols = this.props.flight.airplane.cols;
@@ -52,7 +40,7 @@ class SeatMap extends Component {
       for ( let currentCol = 1; currentCol <= numCols; currentCol++ ){
         seatRow.push(<Seat row={ currentRow } col={ currentCol } numCols={ numCols } />)
       }
-      seatMap.push(<div>{ seatRow }</div>);     
+      seatMap.push(<div>{ seatRow }</div>);
     }
     return seatMap;
   }
