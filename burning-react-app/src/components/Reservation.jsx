@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import FlightDetails from '../components/FlightDetails.jsx' 
+import FlightDetails from '../components/FlightDetails.jsx'
 import SeatMap from '../components/SeatMap.jsx'
-import '../App.css' 
-import '../Reservation.css' 
+import '../App.css'
+import '../Reservation.css'
 
 const SERVER_URL_PREFIX = 'http://localhost:3000';
 
 class Reservation extends Component {
-
   constructor( props ){
     super( props );
 
     this.state = {
-      flight: {},
+      flight: {}
     }
   }
 
@@ -24,17 +23,19 @@ class Reservation extends Component {
 
     const getSingleFlightDetail = () => axios.get( SERVER_URL )
     .then( response => {
+      console.log( response.data );
       this.setState({ flight: response.data });
     });
     getSingleFlightDetail();
   }
 
   render () {
-    let content;    
+    console.log('state: ', this.state.flight );
+    let content;
     if( this.state.flight.id ){
       content = (
         <div>
-          <FlightDetails flight={ this.state.flight } /> 
+          <FlightDetails flight={ this.state.flight } />
           <SeatMap flight={ this.state.flight } />
         </div>
       )

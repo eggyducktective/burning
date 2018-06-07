@@ -1,4 +1,6 @@
 class FlightsController < ApplicationController
+  ActiveRecord::Base.include_root_in_json = false
+
   def new
     @flight = Flight.new
   end
@@ -15,7 +17,7 @@ class FlightsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render :json => @flight.as_json(include: :airplane)
+        render json: @flight, include: [:airplane, :reservations]
       end
     end
   end

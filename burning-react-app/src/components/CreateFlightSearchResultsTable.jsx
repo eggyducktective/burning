@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class CreateFlightSearchResultsTable extends Component {
   constructor(props){
@@ -21,12 +22,12 @@ class CreateFlightSearchResultsTable extends Component {
           {
           this.props.searchResults !== null && this.props.searchResults.map((flight, index) => (
           <tbody key={ index }>
-            <tr>
-              <td>{ flight.flight_number }</td>
-              <td>{ flight.flight_date }</td>
-              <td>{ flight.origin }</td>
-              <td>{ flight.destination }</td>
-            </tr>
+          <tr>
+            <td><Link to={`/flight/${flight.id}`}>{ flight.flight_number }</Link></td>
+            <td>{ flight.flight_date }</td>
+            <td>{ flight.origin }</td>
+            <td>{ flight.destination }</td>
+          </tr>
           </tbody>
           ))}
         </table>

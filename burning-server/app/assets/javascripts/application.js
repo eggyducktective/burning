@@ -42,6 +42,7 @@ $(document).ready(function() {
           rowCount = rowCount + 1;
         }
         $('<td></td>').text("seat").appendTo(row);
+    
       }
     }
     $('#plane_table').append(mytable);
