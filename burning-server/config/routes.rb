@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "session#new"
+  root to: "pages#home"
   get "/login" => "session#new"
   post "/login" => "session#create"
   delete "/login" => "session#destroy"
@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get "/search" => 'flights#index'
   get "/users" => 'users#index'
   get "/reservations" => 'reservations#index'
-  get "/flightRes/:id" => 'reservations#single_flight_reservation'
+  post "/reservation" => "reservations#create"
   resources :airplanes, :flights
 end

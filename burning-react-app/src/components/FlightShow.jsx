@@ -3,7 +3,8 @@ import axios from 'axios';
 import SeatMap from '../components/SeatMap.jsx'
 import '../App.css'
 
-const SERVER_URL = 'http://localhost:3000/flights';
+// const SERVER_URL = 'http://localhost:3000/flights';
+const SERVER_URL = 'http://10.1.7.196:3000/flights';
 
 class FlightShow extends Component {
 

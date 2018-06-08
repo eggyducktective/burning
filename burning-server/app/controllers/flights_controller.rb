@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
   def create
     flight = Flight.new flight_params
     flight.save
-    redirect_to flight_path(flight)
+    redirect_to(flight_path(flight.id))
   end
 
   def show
