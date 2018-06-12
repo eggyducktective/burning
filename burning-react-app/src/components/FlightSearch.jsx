@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import CreateFlightSearchResultsTable from './CreateFlightSearchResultsTable.jsx';
 
-const SERVER_URL = 'http://localhost:3000/search.json';
+// const SERVER_URL = 'http://localhost:3000/search.json';
+const SERVER_URL = 'http://10.1.7.196:3000/search.json';
 
 
 class FlightSearch extends Component {

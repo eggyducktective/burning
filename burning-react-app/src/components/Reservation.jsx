@@ -5,15 +5,35 @@ import SeatMap from '../components/SeatMap.jsx'
 import '../App.css'
 import '../Reservation.css'
 
-const SERVER_URL_PREFIX = 'http://localhost:3000';
+// const SERVER_URL_PREFIX = 'http://localhost:3000';
+const SERVER_URL_PREFIX = 'http://10.1.7.196:3000';
 
 class Reservation extends Component {
   constructor( props ){
     super( props );
 
     this.state = {
-      flight: {}
+      flight: {},
+      user_id: this.props.match.params.user_id,
+      created: null
     }
+
+    this.saveReservation = this.saveReservation.bind( this );
+  }
+
+  saveReservation( reservation ){
+    const SERVER_URL = `${ SERVER_URL_PREFIX }/reservation.json`;
+
+    axios.post( SERVER_URL, { 
+      user_id: reservation.user_id,
+      flight_id: reservation.flight_id,
+      row: reservation.row,
+      col: reservation.col
+    })
+    .then( response => {
+      const createTime = new Date();
+      this.setState({ created: createTime });
+    });
   }
 
   // Needed for axios
@@ -23,10 +43,11 @@ class Reservation extends Component {
 
     const getSingleFlightDetail = () => axios.get( SERVER_URL )
     .then( response => {
-      console.log( response.data );
       this.setState({ flight: response.data });
     });
+
     getSingleFlightDetail();
+    setInterval( getSingleFlightDetail, 1000 );
   }
 
   saveUser( user ){
@@ -34,13 +55,12 @@ class Reservation extends Component {
   }
 
   render () {
-    console.log('state: ', this.state.flight );
     let content;
     if( this.state.flight.id ){
       content = (
         <div>
           <FlightDetails flight={ this.state.flight } />
-          <SeatMap flight={ this.state.flight } />
+          <SeatMap flight={ this.state.flight } processBooking={ this.saveReservation } userId={ this.state.user_id } />
         </div>
       )
     } else {

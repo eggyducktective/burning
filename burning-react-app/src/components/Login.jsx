@@ -3,20 +3,16 @@ import {Link} from 'react-router-dom';
 import '../App.css'
 import axios from 'axios';
 
-const USER_URL = 'http://localhost:3000/users.json'
-
 class Login extends Component {
 
   constructor(){
     super();
-    this.state={
-
-      user_name: '',
-      user_id: '',
+    this.state = {
+      loginFormUserName: '',
       loginFormPassword: '',
-      loginFormUser: '',
-      users: []
-
+      user_id: '',
+      user_name: '',
+      listOfUsers: []
     }
     this._handleNameChange = this._handleNameChange.bind(this);
     this._handlePasswordChange = this._handlePasswordChange.bind(this);
@@ -24,58 +20,59 @@ class Login extends Component {
   }
 
   _handleNameChange( event ) {
-    this.setState({ user_name: event.target.value});
-  }
-  _handlePasswordChange( event ) {
-    this.setState({ loginFormPassword: event.target.value});
+    this.setState({ loginFormUserName: event.target.value });
   }
 
+  _handlePasswordChange( event ) {
+    this.setState({ loginFormPassword: event.target.value });
+  }
 
   componentDidMount(){
-    const fetchUserData = () => {
-      axios.get(USER_URL).then(response => {
-        console.log('resonse:', response.data);
-        this.setState({users: response.data});
+    const USER_URL = 'http://localhost:3000/users.json';
+
+    const fetchUserList = () => {
+      axios.get(USER_URL)
+      .then(response => {
+        this.setState({ listOfUsers: response.data });
       });
     };
-    fetchUserData();
-    console.log(this.state.users);
+
+    fetchUserList();
   }
 
   _handleSubmit( event ){
-
     event.preventDefault();
-    const name = this.state.user_name;
+    const user_name = this.state.loginFormUserName;
+    console.log( 'user_name: ', user_name );
+    
     const password = this.state.loginFormPassword;
-//     console.log('name: ', name);
-// console.log('password: ', password);
+    console.log( 'password: ', password );
 
-    for (let i = 0; i < this.state.users.length; i++) {
-      const user = this.state.users[i];
-      if( user.name === name && password === 'chicken' ) {
-        this.setState({user_id: this.state.loginFormUser, user_name: user.name});
+    for (let currentUser = 0; currentUser < this.state.listOfUsers.length; currentUser++) {
+      const userRecord = this.state.listOfUsers[ currentUser ];
+      
+      if( userRecord.name === user_name && password === 'chicken' ) {
+        this.setState({ user_id: userRecord.id });
         this.props.history.push("/") // pass the props down
       }
     }
-
   }
-
-
 
   render(){
     return(
       <div className="form">
-          <form onSubmit={ this._handleSubmit }>
-            <label htmlFor="name">User Name: </label>
-            <input type="text" name="name" onChange={this._handleNameChange}/>
-            <br/>
-            <br/>
-            <label htmlFor="name">Password: </label>
-            <input type="password" name="password" onChange={this._handlePasswordChange}/>
-            <input type="submit" value="Login"/>
-          </form>
-        </div>
+        <form onSubmit={ this._handleSubmit }>
+          <label htmlFor="name">User Name: </label>
+          <input type="text" name="name" onChange={this._handleNameChange}/>
+          <br/>
+          <br/>
+          <label htmlFor="name">Password: </label>
+          <input type="password" name="password" onChange={this._handlePasswordChange}/>
+          <input type="submit" value="Login"/>
+        </form>
+      </div>
     );
   }
 }
+
 export default Login;

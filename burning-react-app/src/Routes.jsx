@@ -12,10 +12,11 @@ import FlightShow from './components/FlightShow.jsx';
 const Routes = (
   <Router>
     <div>
+      {/* <Route exact path="/" component={ Home } /> */}
       <Route exact path="/" component={ Home } />
       <Route exact path="/flight" component={ FlightSearch } />
       <Route exact path="/flight/:id" component={ FlightShow } />
-      <Route path="/reservation/:id" component={ Reservation } />
+      <Route path="/reservation/:id/:user_id" component={ Reservation } />
       <Route path="/login" component={Login} />
 
     </div>

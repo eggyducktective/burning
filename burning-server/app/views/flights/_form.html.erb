@@ -6,8 +6,9 @@
 <%= f.label :flight_number %>
 <%= f.text_field :flight_number %>
 <br>
-  <%= f.label :airplane_id, 'Flight :' %>
-  <%= f.select :airplane_id, Flight.pluck('DISTINCT airplane_id').reverse, include_blank: true , class: :field%>
+  <%= f.label :airplane_id, 'Airplane ID:' %>
+  <%= f.select :airplane_id, Airplane.pluck('DISTINCT id').reverse, include_blank: true , class: :field%>
+  <%# <%= f.select :airplane_id, Flight.pluck('DISTINCT airplane_id').reverse, include_blank: true , class: :field%>
 <br>
 <%= f.label :origin %>
 <%= f.text_field :origin %>

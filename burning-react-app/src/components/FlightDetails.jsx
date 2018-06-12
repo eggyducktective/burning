@@ -4,6 +4,8 @@ import '../Reservation.css';
 import axios from 'axios';
 import SeatMap from '../components/SeatMap.jsx'
 import '../App.css'
+import {Link} from 'react-router-dom';
+
 
 function CreateTableHeader(){
   return (
@@ -13,6 +15,7 @@ function CreateTableHeader(){
         <th>Flight</th>
         <th>From > To</th>
         <th>Plane</th>
+        <th></th>
       </tr>
     </thead>
   )
@@ -26,6 +29,7 @@ function DisplayFlightRow( props ) {
         <td>{ props.flight.flight_date }</td>
         <td>{ props.flight.origin }&nbsp;>&nbsp;{ props.flight.destination }</td>
         <td>{ props.flight.airplane.name }</td>
+        <td><Link to={"/"}>Return to Home Page</Link></td>
       </tr>
     </tbody>
   )
