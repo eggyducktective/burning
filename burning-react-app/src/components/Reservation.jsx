@@ -29,6 +29,10 @@ class Reservation extends Component {
     getSingleFlightDetail();
   }
 
+  saveUser( user ){
+    
+  }
+
   render () {
     console.log('state: ', this.state.flight );
     let content;

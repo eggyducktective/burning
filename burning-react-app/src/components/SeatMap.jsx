@@ -31,12 +31,15 @@ class SeatMap extends Component {
     this.state={
       loginUser: 1
     }
+    this._handleSubmit = this._handleSubmit.bind(this)
   }
+
 
   _handleSubmit( event ){
     event.preventDefault();
-    // Axios post code here
+  
   }
+
 
   returnReservedSeatName = ( row, col, reservations ) => {
     console.log('row: ', row);
@@ -70,15 +73,18 @@ class SeatMap extends Component {
     return seatMap;
   }
 
+  _handleChange(event){
+    this.setState({loginUser: event.target.value})
+  }
   render () {
     return (
       <div className="seatMap">
         <form onSubmit={ this._handleSubmit }>
-        { this.createSeatMap() }
+          { this.createSeatMap() }
           <input type="submit" value="Save Your Reservation" />
         </form>
       </div>
-    )
+    );
   }
 }
 

@@ -29,8 +29,8 @@ class FlightShow extends Component {
 
     return (
       <div>
-        <h1>This is in Flight Show</h1>
-      
+        <h1></h1>
+
       </div>
     )
   }
